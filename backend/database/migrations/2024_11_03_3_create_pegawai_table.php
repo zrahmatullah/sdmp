@@ -19,6 +19,7 @@ class CreatePegawaiTable extends Migration
             $table->string('email')->unique(); // kolom email dengan constraint unique
             $table->string('phone_number')->nullable(); // kolom nomor telepon bisa kosong
             $table->text('address')->nullable(); // kolom alamat bisa kosong
+            $table->string('photos')->nullable(); // kolom foto bisa kosong
             $table->date('date_of_birth'); // kolom tanggal lahir
             $table->date('join_date'); // kolom tanggal bergabung
             $table->foreignId('jabatan_id')->constrained('jabatan_M'); // foreign key ke tabel jabatan_M
