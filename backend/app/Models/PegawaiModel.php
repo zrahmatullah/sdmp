@@ -11,14 +11,14 @@ class PegawaiModel extends Model
     //
 
     protected $fillable = [
-        'name',
+        'namaPegawai',
         'email',
-        'phone_number',
-        'address',
-        'date_of_birth',
-        'join_date',
+        'noTelepon',
+        'alamat',
+        'tglLahir',
+        'tglGabung',
         'jabatan_id',
         'departemen_id',
-        'photos',
+        'foto',
     ];
 }

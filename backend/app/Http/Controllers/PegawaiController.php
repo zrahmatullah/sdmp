@@ -28,13 +28,13 @@ class PegawaiController extends Controller
     {
         // Validasi data
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
+            'namaPegawai' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:pegawai_M',
-            'phone_number' => 'nullable|string|max:15',
-            'address' => 'nullable|string',
-            'date_of_birth' => 'required|date',
-            'join_date' => 'required|date',
-            'photos' => 'nullable|image|mimes:jpeg,png,jpg|max:2048', // contoh validasi untuk foto
+            'noTelepon' => 'nullable|string|max:15',
+            'alamat' => 'nullable|string',
+            'tglLahir' => 'required|date',
+            'tglGabung' => 'required|date',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048', // contoh validasi untuk foto
             // Tambahkan field foto jika ada
         ]);
 
@@ -78,12 +78,12 @@ class PegawaiController extends Controller
 
         // Validasi data
         $validatedData = $request->validate([
-            'name' => 'sometimes|required|string|max:255',
+            'namaPegawai' => 'sometimes|required|string|max:255',
             'email' => 'sometimes|required|string|email|max:255|unique:pegawai_M,email,' . $pegawai->id,
-            'phone_number' => 'nullable|string|max:15',
-            'address' => 'nullable|string',
-            'date_of_birth' => 'sometimes|required|date',
-            'join_date' => 'sometimes|required|date',
+            'noTelepon' => 'nullable|string|max:15',
+            'alamat' => 'nullable|string',
+            'tglLahir' => 'sometimes|required|date',
+            'tglGabung' => 'sometimes|required|date',
             // Tambahkan validasi untuk foto jika ada
         ]);
 

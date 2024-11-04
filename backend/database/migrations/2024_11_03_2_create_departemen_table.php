@@ -13,10 +13,10 @@ class CreateDepartemenTable extends Migration
      */
     public function up()
     {
-        Schema::create('department_M', function (Blueprint $table) {
+        Schema::create('departemen_M', function (Blueprint $table) {
             $table->id(); // Primary key
-            $table->string('name'); // Kolom nama departemen
-            $table->text('description')->nullable(); // Kolom deskripsi departemen, bisa kosong
+            $table->string('namaDepartemen'); // Kolom nama departemen
+            $table->text('deskripsi')->nullable(); // Kolom deskripsi departemen, bisa kosong
             $table->unsignedBigInteger('jabatan_id')->nullable(); // Kolom ID manager departemen (FK)
 
             // Menambahkan foreign key constraint
@@ -33,6 +33,6 @@ class CreateDepartemenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('department_M');
+        Schema::dropIfExists('departemen_M');
     }
 }
