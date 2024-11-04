@@ -19,6 +19,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// untuk pegawai
 // Route::get('/pegawai', [PegawaiController::class, 'index']);
 Route::apiResource('pegawai', PegawaiController::class);
 // Route::apiResource('gaji', GajiController::class);
