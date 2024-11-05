@@ -18,6 +18,7 @@ const routes = [
         name: 'test',
         component: () => import( /* webpackChunkName: "home" */ '../views/test.vue')
     },
+
     ...masterRoutes,
 ];
 
