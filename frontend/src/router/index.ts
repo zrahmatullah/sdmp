@@ -8,6 +8,16 @@ const routes = [
         name: 'home',
         component: () => import( /* webpackChunkName: "home" */ '../views/home.vue')
     },
+    {
+        path: '/pegawai-dashboard',
+        name: 'pegawai',
+        component: () => import( /* webpackChunkName: "home" */ '../views/PegawaiDashboard.vue')
+    },
+    {
+        path: '/test',
+        name: 'test',
+        component: () => import( /* webpackChunkName: "home" */ '../views/test.vue')
+    },
 
 ]
 

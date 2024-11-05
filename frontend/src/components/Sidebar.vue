@@ -37,17 +37,18 @@
                                 </div>
                                 <ul class="list-none p-0 m-0 overflow-hidden">
                                     <li>
-                                        <a v-ripple
+                                        <a v-ripple href="/"
                                             class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+
                                             <i class="pi pi-home mr-2"></i>
                                             <span class="font-medium">Dashboard</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a v-ripple
+                                        <a v-ripple href="/pegawai-dashboard"
                                             class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
-                                            <i class="pi pi-bookmark mr-2"></i>
-                                            <span class="font-medium">Bookmarks</span>
+                                            <i class="pi pi-user mr-2"></i>
+                                            <span class="font-medium">Pegawai</span>
                                         </a>
                                     </li>
                                     <li>
