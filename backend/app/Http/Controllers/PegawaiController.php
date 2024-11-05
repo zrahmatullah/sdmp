@@ -26,22 +26,47 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {
-        // Validasi data
-        $validatedData = $request->validate([
-            'namaPegawai' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:pegawai_M',
-            'noTelepon' => 'nullable|string|max:15',
-            'alamat' => 'nullable|string',
-            'tglLahir' => 'required|date',
-            'tglGabung' => 'required|date',
-            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048', // contoh validasi untuk foto
-            // Tambahkan field foto jika ada
-        ]);
+        // Tentukan apakah create atau update berdasarkan parameter $id
+        if ($request['id']) {
+            // Update data jika ID ditemukan
+            $pegawai = PegawaiModel::findOrFail($request['id']); // Akan error 404 jika ID tidak ditemukan
+            $message = 'Data pegawai berhasil diperbarui';
+        } else {
+            // Buat data baru jika ID tidak ada
+            $pegawai = new PegawaiModel();
+            $message = 'Data pegawai berhasil disimpan';
+        }
 
-        // Menyimpan pegawai baru
-        $pegawai = PegawaiModel::create($validatedData);
+        // Isi data pegawai
+        $pegawai->namaPegawai   = $request->namaPegawai;
+        $pegawai->email         = $request->email;
+        $pegawai->noTelepon     = $request->noTelepon;
+        $pegawai->alamat        = $request->alamat;
+        $pegawai->tglLahir      = $request->tglLahir;
+        $pegawai->tglGabung     = $request->tglGabung;
+        $pegawai->jabatan_id    = $request->jabatan_id;
+        $pegawai->departemen_id = $request->departemen_id;
 
-        return response()->json($pegawai, 201); // 201 Created
+        // Periksa apakah ada file foto yang diunggah
+        if ($request->hasFile('foto')) {
+            $foto = $request->file('foto');
+
+            // Buat nama file unik untuk foto
+            $namaFile = time() . '_' . $foto->getClientOriginalName();
+
+            // Simpan file foto ke dalam folder `public/storage/uploads/foto`
+            $path = $foto->storeAs('uploads/foto', $namaFile, 'public');
+
+            // Simpan path foto ke dalam database
+            $pegawai->foto = 'storage/' . $path;
+        }
+
+        $pegawai->save();
+
+        return response()->json([
+            'message' => $message,
+            'data' => $pegawai
+        ], $id ? 200 : 201); 
     }
 
     /**
@@ -68,9 +93,9 @@ class PegawaiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        $pegawai = PegawaiModel::find($id);
+        $pegawai = PegawaiModel::find($request['id']);
 
         if (!$pegawai) {
             return response()->json(['message' => 'Pegawai tidak ditemukan'], 404);

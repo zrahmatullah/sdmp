@@ -16,4 +16,11 @@ import Navbar from './components/Navbar.vue';
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.content {
+    max-width: 1910px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
