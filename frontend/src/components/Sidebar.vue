@@ -14,7 +14,7 @@
                                     d="M30.69 4.21L24.37 4.81L22.57 0.69L22.86 0H26.48L30.69 4.21ZM23.75 5.67L22.66 3.08L18.05 14.24V17.14H19.7H20.03H20.16H20.2L24.1 15.7L30.11 5.19L23.75 5.67ZM4.21002 4.21L10.53 4.81L12.33 0.69L12.05 0H8.43002L4.22002 4.21H4.21002ZM21.9 17.4L20.6 18.2H14.3L13 17.4L12.4 18.2L12.42 18.23L17.45 26.8L22.48 18.23L22.5 18.2L21.9 17.4ZM4.79002 5.19L10.8 15.7L14.7 17.14H14.74H15.2H16.85V14.24L12.24 3.09L11.15 5.68L4.79002 5.2V5.19Z"
                                     fill="var(--text-color)" />
                             </svg> -->
-                            <span class="font-semibold text-2xl text-primary" style="align-content: center;">HRIS
+                            <span class="font-semibold text-2xl text-primary" style="align-content: center">HRIS
                                 APP</span>
                         </span>
                         <span>
@@ -30,7 +30,7 @@
             enterClass: 'hidden',
             enterActiveClass: 'slidedown',
             leaveToClass: 'hidden',
-            leaveActiveClass: 'slideup'
+            leaveActiveClass: 'slideup',
         }" class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple">
                                     <span class="font-medium">FAVORITES</span>
                                     <i class="pi pi-chevron-down"></i>
@@ -39,7 +39,6 @@
                                     <li>
                                         <a v-ripple href="/"
                                             class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
-
                                             <i class="pi pi-home mr-2"></i>
                                             <span class="font-medium">Dashboard</span>
                                         </a>
@@ -57,10 +56,10 @@
             enterClass: 'hidden',
             enterActiveClass: 'slidedown',
             leaveToClass: 'hidden',
-            leaveActiveClass: 'slideup'
+            leaveActiveClass: 'slideup',
         }" class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                                             <i class="pi pi-chart-line mr-2"></i>
-                                            <span class="font-medium">Reports</span>
+                                            <span class="font-medium">Master Data</span>
                                             <i class="pi pi-chevron-down ml-auto"></i>
                                         </a>
                                         <ul
@@ -71,7 +70,7 @@
             enterClass: 'hidden',
             enterActiveClass: 'slidedown',
             leaveToClass: 'hidden',
-            leaveActiveClass: 'slideup'
+            leaveActiveClass: 'slideup',
         }" class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                                                     <i class="pi pi-chart-line mr-2"></i>
                                                     <span class="font-medium">Revenue</span>
@@ -96,10 +95,10 @@
                                                 </ul>
                                             </li>
                                             <li>
-                                                <a v-ripple
+                                                <a v-ripple href="/master-jabatan"
                                                     class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                                                     <i class="pi pi-chart-line mr-2"></i>
-                                                    <span class="font-medium">Expenses</span>
+                                                    <span class="font-medium">Jabatan</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -145,7 +144,7 @@
             enterClass: 'hidden',
             enterActiveClass: 'slidedown',
             leaveToClass: 'hidden',
-            leaveActiveClass: 'slideup'
+            leaveActiveClass: 'slideup',
         }" class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple">
                                     <span class="font-medium">APPLICATION</span>
                                     <i class="pi pi-chevron-down"></i>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\JabatanModel;
 
 class JabatanController extends Controller
 {
@@ -13,7 +14,8 @@ class JabatanController extends Controller
      */
     public function index()
     {
-        //
+        $jabatan = JabatanModel::all();
+        return response()->json($jabatan);
     }
 
     /**
@@ -24,7 +26,16 @@ class JabatanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validasi data
+        $validatedData = $request->validate([
+            'namaJabatan'=> 'required|string|max:255',
+            'deskripsiJabatan'=> 'required|string|max:255',
+            'golonganGaji'=> 'nullable|string',
+        ]);
+        // dd($validatedData);
+        //menyimpan
+        $jabatan = JabatanModel::create($validatedData);
+        return response()->json($jabatan,201);
     }
 
     /**
@@ -36,6 +47,12 @@ class JabatanController extends Controller
     public function show($id)
     {
         //
+        $jabatan = JabatanModel::find($id);
+        if(!$jabatan){
+            return response()->json(['message'=> 'Jabatan tidak ditemukan', 404]);
+        }else{}{
+            return response()->json($jabatan);
+        }
     }
 
     /**
@@ -58,6 +75,12 @@ class JabatanController extends Controller
      */
     public function destroy($id)
     {
+        $jabatan= JabatanModel::find($id);
         //
+        if(!$jabatan){
+            return response()->json(['message'=>'Jabatan tidak ditemukan']);
+        }
+        $jabatan->delete();
+        return response()->json(['message'=> 200, 'Jabatan Berhasil dihapus'], 200);
     }
 }
