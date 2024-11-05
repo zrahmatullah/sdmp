@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\JabatanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,8 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // untuk pegawai
 // Route::get('/pegawai', [PegawaiController::class, 'index']);
-Route::resource('pegawai', PegawaiController::class);
-// Route::apiResource('gaji', GajiController::class);
+Route::apiResource('pegawai', PegawaiController::class);
+Route::apiResource('jabatan', JabatanController::class);
 
 
 // Route::get('/pegawai', [PegawaiController::class, 'index']);
