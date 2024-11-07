@@ -25,49 +25,38 @@ class PegawaiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        // Tentukan apakah create atau update berdasarkan parameter $id
-        if ($request['id']) {
-            // Update data jika ID ditemukan
-            $pegawai = PegawaiModel::findOrFail($request['id']); // Akan error 404 jika ID tidak ditemukan
+    {    
+        // dari table pegawai_m ada yang di edit, di not null nya, semua nya di matikan kecuali id dan statusenable
+        if ($request->has('id')) {
+            $pegawai = PegawaiModel::findOrFail($request->id);
             $message = 'Data pegawai berhasil diperbarui';
         } else {
-            // Buat data baru jika ID tidak ada
             $pegawai = new PegawaiModel();
+            $foto = $request->file('foto');
+            $namaFile = time() . '_' . $foto->getClientOriginalName();
+            $path = $foto->storeAs('uploads/foto', $namaFile, 'public');
+            $pegawai->foto = 'storage/' . $path;
             $message = 'Data pegawai berhasil disimpan';
         }
-
-        // Isi data pegawai
-        $pegawai->namaPegawai   = $request->namaPegawai;
-        $pegawai->email         = $request->email;
-        $pegawai->noTelepon     = $request->noTelepon;
-        $pegawai->alamat        = $request->alamat;
-        $pegawai->tglLahir      = $request->tglLahir;
-        $pegawai->tglGabung     = $request->tglGabung;
-        $pegawai->jabatan_id    = $request->jabatan_id;
-        $pegawai->departemen_id = $request->departemen_id;
-
-        // Periksa apakah ada file foto yang diunggah
-        if ($request->hasFile('foto')) {
-            $foto = $request->file('foto');
-
-            // Buat nama file unik untuk foto
-            $namaFile = time() . '_' . $foto->getClientOriginalName();
-
-            // Simpan file foto ke dalam folder `public/storage/uploads/foto`
-            $path = $foto->storeAs('uploads/foto', $namaFile, 'public');
-
-            // Simpan path foto ke dalam database
-            $pegawai->foto = 'storage/' . $path;
-        }
-
+        $pegawai->namaPegawai   = $request->namaPegawai ?? 'null';
+        $pegawai->email         = $request->email ?? 'null';
+        $pegawai->noTelepon     = $request->noTelepon ?? null;
+        $pegawai->alamat        = $request->alamat ?? 'null';
+        $pegawai->tglLahir      = $request->tglLahir ?? null ;
+        $pegawai->tglGabung     = $request->tglGabung ?? null ;
+        $pegawai->jabatan_id    = $request->jabatan_id ?? null;
+        $pegawai->statusenable   = 'true';
+        $pegawai->pegawai_id    = 12334;
+        $pegawai->departemen_id = $request->departemen_id ?? 'null';
         $pegawai->save();
 
+    
         return response()->json([
             'message' => $message,
             'data' => $pegawai
-        ], $id ? 200 : 201); 
+        ], $request->has('id') ? 200 : 201);
     }
+
 
     /**
      * Display the specified resource.

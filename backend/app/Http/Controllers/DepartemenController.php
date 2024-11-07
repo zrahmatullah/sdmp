@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DepartemenModel;
 use Illuminate\Http\Request;
 
 class DepartemenController extends Controller
@@ -13,7 +14,12 @@ class DepartemenController extends Controller
      */
     public function index()
     {
-        //
+        $jabatan = DepartemenModel::all();
+        $data = [
+            "data" => $jabatan,
+            "message" => 'piy@'
+        ];
+        return response()->json($data);
     }
 
     /**

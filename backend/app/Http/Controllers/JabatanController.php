@@ -15,7 +15,11 @@ class JabatanController extends Controller
     public function index()
     {
         $jabatan = JabatanModel::all();
-        return response()->json($jabatan);
+        $data = [
+            "data" => $jabatan,
+            "message" => 'piy@'
+        ];
+        return response()->json($data);
     }
 
     /**

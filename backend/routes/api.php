@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\JabatanController;
 use Illuminate\Http\Request;
@@ -24,6 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get('/pegawai', [PegawaiController::class, 'index']);
 Route::apiResource('pegawai', PegawaiController::class);
 Route::apiResource('jabatan', JabatanController::class);
+Route::apiResource('departemen', DepartemenController::class);
 
 
 // Route::get('/pegawai', [PegawaiController::class, 'index']);

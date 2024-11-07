@@ -14,7 +14,7 @@
     </Toolbar>
     <div>
         <h1>Data Pegawai</h1>
-        <DataTable :value="data" paginator rows="10" :rowsPerPageOptions="[5, 10, 25]" dataKey="id">
+        <DataTable :value="listdata" paginator rows="10" :rowsPerPageOptions="[5, 10, 25]" dataKey="id">
             <Column field="namaPegawai" header="Nama Pegawai"></Column>
             <Column field="email" header="Email"></Column>
             <Column field="noTelepon" header="No Telepon"></Column>
@@ -27,105 +27,70 @@
     </div>
 
     <!-- EDIT DATA -->
-    <Dialog v-model:visible="productDialog" :style="{ width: '1050px' }" header="Create Nama Pegawai" :modal="true"
-            class="p-fluid">
+    <Dialog v-model:visible="productDialog" :style="{ width: '1050px' }" header="Create Nama Pegawai" :modal="true" class="p-fluid">
+        <div class="formgrid grid">
+            <div class="field col">
+                <label for="name">Nama Lengkap</label>
+                <InputText id="name" v-model.trim="data.namaPegawai" required="true" autofocus :invalid="submitted && !data.namaPegawai" />
+                <small class="p-error" v-if="submitted && !data.namaPegawai">Nama Lengkap diperlukan.</small>
+            </div>
+            <div class="field col">
+                <label for="email">Email</label>
+                <InputText id="email" v-model.trim="data.email" required="true" :invalid="submitted && !data.email" />
+                <small class="p-error" v-if="submitted && !data.email">Email diperlukan.</small>
+            </div>
+            <div class="field col">
+                <label for="noHp">No Handphone</label>
+                <InputText id="noHp" v-model.trim="data.noHp" required="true" :invalid="submitted && !data.noHp" />
+                <small class="p-error" v-if="submitted && !data.noHp">No Handphone diperlukan.</small>
+            </div>
+        </div>
+        <div class="formgrid grid">
+            <div class="field col">
+                <label for="tglLahir">Tanggal Lahir</label>
+                <Calendar v-model="data.tglLahir" showIcon placeholder="Pilih Tanggal Lahir" :invalid="submitted && !data.tglLahir" />
+                <small class="p-error" v-if="submitted && !data.tglLahir">Tanggal Lahir diperlukan.</small>
+            </div>
+            <div class="field col">
+                <label for="tglGabung">Tanggal Gabung</label>
+                <Calendar v-model="data.tglGabung" showIcon placeholder="Pilih Tanggal Gabung" :invalid="submitted && !data.tglGabung" />
+                <small class="p-error" v-if="submitted && !data.tglGabung">Tanggal Gabung diperlukan.</small>
+            </div>
+        </div>
+        <div class="field">
+            <label for="alamat">Alamat</label>
+            <Textarea id="alamat" v-model.trim="data.alamat" rows="5" cols="30" :invalid="submitted && !data.alamat" />
+            <small class="p-error" v-if="submitted && !data.alamat">Alamat diperlukan.</small>
+        </div>
+        <div class="field">
+            <label for="jabatan">Jabatan</label>
+            <Dropdown id="jabatan" v-model="data.jabatan" :options="jabatanData" optionLabel="label" placeholder="Pilih Jabatan" :invalid="submitted && !data.jabatan" />
+            <small class="p-error" v-if="submitted && !data.jabatan">Jabatan diperlukan.</small>
+        </div>
+        <div class="field">
+            <label>Departemen</label>
             <div class="formgrid grid">
-                <div class="field col">
-                    <label for="name">Nama Lengkap</label>
-                    <InputText id="name" v-model.trim="data.namaPegawai" required="true" autofocus
-                        :invalid="submitted && !data.namaPegawai" />
-                    <small class="p-error" v-if="submitted && !data.namaPegawai">Name is required.</small>
-                </div>
-                <div class="field col">
-                    <label for="name">Email</label>
-                    <InputText id="name" v-model.trim="data.email" required="true" autofocus
-                    :invalid="submitted && !data.email" />
-                    <small class="p-error" v-if="submitted && !data.email">Name is required.</small>
-                </div>
-                <div class="field col">
-                    <label for="name">No Handphone</label>
-                    <InputText id="name" v-model.trim="data.noHp" required="true" autofocus
-                    :invalid="submitted && !data.noHp" />
-                    <small class="p-error" v-if="submitted && !data.noHp">Name is required.</small>
+                <div class="field-radiobutton col-3" v-for="item in departemenData" :key="item.value">
+                    <RadioButton :id="'departemen' + item.value" name="departemen" :value="item.value" v-model="data.departemen" :invalid="submitted && !data.departemen" />
+                    <label :for="'departemen' + item.value">{{ item.label }}</label>
                 </div>
             </div>
-            <div class="formgrid grid">
-                <div class="field col">
-                    <label for="price">Tanggal Lahir</label>
-                    <Calendar v-model="data.tglLahir" showIcon fluid iconDisplay="input" :invalid="submitted && !data.tglLahir" />
-                    <small class="p-error" v-if="submitted && !data.tglLahir">Name is required.</small>
-                </div>
-                <div class="field col">
-                    <label for="quantity">Tanggal Gabung</label>
-                    <Calendar v-model="data.tglGabung" showIcon fluid iconDisplay="input" :invalid="submitted && !data.tglGabung" />
-                    <small class="p-error" v-if="submitted && !data.tglGabung">Name is required.</small>
-                </div>
+            <small class="p-error" v-if="submitted && !data.departemen">Departemen diperlukan.</small>
+        </div>
+        <div class="formgrid grid">
+            <div class="field col">
+                <label for="foto">Upload Foto</label>
+                <FileUpload @select="onFileSelect" accept="image/*" chooseLabel="Pilih Gambar"  :auto="false" :showUploadButton="false" :showCancelButton="false">
+                    <template #empty>
+                        <p>Belum ada gambar yang diinput.</p>
+                    </template>
+                </FileUpload>
             </div>
-            <div class="field">
-                <label for="name">Alamat</label>
-                <FloatLabel>
-                    <Textarea v-model.trim="data.alamat" rows="5" cols="30"  :invalid="submitted && !data.alamat"  />
-                </FloatLabel>
-                <small class="p-error" v-if="submitted && !data.alamat">Name is required.</small>
-            </div>
-
-            <div class="field">
-                    <label for="inventoryStatus" class="mb-3">Jabatan</label>
-                    <Dropdown id="inventoryStatus" v-model="data.jabatan" :options="statuses" optionLabel="label" :invalid="submitted && !data.jabatan"
-                        placeholder="Select a Status">
-                        <template #value="slotProps">
-                            <div v-if="slotProps.value && slotProps.value.value">
-                                <Tag :value="slotProps.value.value" :severity="getStatusLabel(slotProps.value.label)" />
-                            </div>
-                            <div v-else-if="slotProps.value && !slotProps.value.value">
-                                <Tag :value="slotProps.value" :severity="getStatusLabel(slotProps.value)" />
-                            </div>
-                            <span v-else>
-                                {{ slotProps.placeholder }}
-                            </span>
-                        </template>
-                    </Dropdown>
-                    <small class="p-error" v-if="submitted && !data.jabatan">Inventory Status is required.</small>
-            </div>
-
-            <div class="field">
-                <label class="mb-3">Departemen</label>
-                <div class="formgrid grid">
-                    <div class="field-radiobutton col-6">
-                        <RadioButton id="category1" name="category" value="Accessories" v-model="data.dapartemen" :invalid="submitted && !data.dapartemen" />
-                        <label for="category1">Accessories</label>
-                    </div>
-                    <div class="field-radiobutton col-6">
-                        <RadioButton id="category2" name="category" value="Clothing" v-model="data.dapartemen" :invalid="submitted && !data.dapartemen" />
-                        <label for="category2">Clothing</label>
-                    </div>
-                    <div class="field-radiobutton col-6">
-                        <RadioButton id="category3" name="category" value="Electronics" v-model="data.dapartemen" :invalid="submitted && !data.dapartemen" />
-                        <label for="category3">Electronics</label>
-                    </div>
-                    <div class="field-radiobutton col-6">
-                        <RadioButton id="category4" name="category" value="Fitness" v-model="data.dapartemen" :invalid="submitted && !data.dapartemen" />
-                        <label for="category4">Fitness</label>
-                    </div>
-                </div>
-                <small class="p-error" v-if="submitted && !data.dapartemen">Inventory Status is required.</small>
-            </div>
-
-            <div class="formgrid grid">
-                <div class="field col">
-                    <label for="price">IMG</label>
-                    <Toast />
-                    <FileUpload ref="fileupload" mode="basic" name="demo[]" url="/api/upload" accept="image/*" :maxFileSize="1000000" @upload="onUpload" />
-                </div>
-                <!-- <div class="field col">
-                    <label for="quantity">Quantity</label>
-                    <InputNumber id="quantity" v-model="product.quantity" integeronly />
-                </div> -->
-            </div>
-            <template #footer>
-                <Button label="Cancel" icon="pi pi-times" text @click="hideDialog" />
-                <Button label="Save" icon="pi pi-check" text @click="savePegawai" />
-            </template>
+        </div>
+        <template #footer>
+            <Button label="Cancel" icon="pi pi-times" text @click="hideDialog" />
+            <Button label="Save" icon="pi pi-check" text @click="savePegawai" />
+        </template>
     </Dialog>
 
         <Dialog v-model:visible="deleteProductDialog" :style="{ width: '450px' }" header="Confirm" :modal="true">
@@ -155,30 +120,45 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import apiClient from '../services/apiService';
+import { useToast } from "primevue/usetoast";
 
 
 const data = ref([]);
+const listdata = ref([]);
+const jabatanData = ref([]);
+const departemenData = ref([]);
 const submitted = ref(false);
 const product = ref({});
 const productDialog = ref(false);
 const deleteProductsDialog = ref(false);
 const deleteProductDialog = ref(false);
 const dt = ref();
+const toast = useToast();
+const onUpload = (event) => {
+    toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 });
+};
+
 
 const fetchData = async () => {
     try {
         const response = await apiClient.get('/api/pegawai');
-        data.value = response.data; // Pastikan data yang diterima sesuai dengan format yang diharapkan
-        console.log(data.value);
+        listdata.value = response.data; // Pastikan data yang diterima sesuai dengan format yang diharapkan
     } catch (error) {
         console.error('Error loading data:', error);
     }
 };
-const jabatanData = async () => {
+const jabatanDanDepartemenDataPegawai = async () => {
     try {
-        const response = await apiClient.get('/api/pegawai');
-        data.value = response.data; // Pastikan data yang diterima sesuai dengan format yang diharapkan
-        console.log(data.value);
+        const responseJabatan = await apiClient.get('/api/jabatan');
+        jabatanData.value = responseJabatan.data.data.map(item => ({
+            label: item.namaJabatan,
+            value: item.id
+        }));
+        const responseDepartemen = await apiClient.get('/api/departemen');
+        departemenData.value = responseDepartemen.data.data.map(item => ({
+            label: item.namaDepartemen,
+            value: item.id
+        }));
     } catch (error) {
         console.error('Error loading data:', error);
     }
@@ -186,28 +166,33 @@ const jabatanData = async () => {
 
 const savePegawai = async () => {
     submitted.value = true;
-    if (!data.value.namaPegawai == null) {
+    if (!data.namaPegawai || !data.email || !data.noHp || !data.alamat || !data.tglLahir || !data.tglGabung || !data.jabatan || !data.dapartemen) {
         console.error("Harap lengkapi semua field yang diperlukan.");
         return;
     }
-    let json = {
-        "namaPegawai" : data.value.namaPegawai,
-        "emailPGW" : data.value.namaPegawai,
-        "noTeleponPGW" : data.value.namaPegawai,
-        "alamatPGW" : data.value.namaPegawai,
-        "fotoPGW" : data.value.namaPegawai,
-        "TglLahirPGW" : data.value.tglLahir,
-        "TglGabungPGW" : data.value.tglGabung,
-        "jabatanPGW" : data.value.inventoryStatus,
-        "departemenPGW" : data.value.dapartemen,
-    };
-    console.log('data json',json)
-    // try {
-    //     const response = await apiClient.post('/api/pegawai', json);
-    //     console.log('Data berhasil dibuat:', response.data);
-    // } catch (error) {
-    //     console.error('Gagal membuat data:', error);
-    // }
+
+    // Membuat objek FormData untuk menampung data pegawai dan file
+    let formData = new FormData();
+    formData.append("id", data.id);
+    formData.append("namaPegawai", data.namaPegawai);
+    formData.append("emailPGW", data.email);
+    formData.append("noTeleponPGW", data.noHp);
+    formData.append("alamatPGW", data.alamat);
+    // formData.append("fotoPGW", data.foto); // file gambar
+    formData.append("TglLahirPGW", data.tglLahir);
+    formData.append("TglGabungPGW", data.tglGabung);
+    formData.append("jabatanPGW", data.jabatan);
+    formData.append("departemenPGW", data.dapartemen);
+
+    try {
+        const response = await apiClient.post('/api/pegawai', formData, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        });
+        console.log('Data berhasil dibuat:', response.data);
+    } catch (error) {
+        console.error('Gagal membuat data:', error);
+    }
+
     productDialog.value = false;
     product.value = {};
 };
@@ -230,5 +215,6 @@ const exportCSV = () => {
 
 onMounted(() => {
     fetchData();
+    jabatanDanDepartemenDataPegawai();
 });
 </script>
