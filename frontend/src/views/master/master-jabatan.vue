@@ -18,8 +18,8 @@
                 </template>
             </Toolbar>
 
-            <DataTable ref="dt" :value="data" v-model:selection="selectedProducts" dataKey="id" :paginator="true"
-                :rows="10" :filters="filters"
+            <DataTable ref="dt" :value="data" v-model:selection="selectedProducts" dataKey="id" :paginator="true" :rows="10"
+                :filters="filters"
                 paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                 :rowsPerPageOptions="[5, 10, 25]"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products">
@@ -157,7 +157,7 @@ const data = ref([]);
 const fetchData = async () => {
     try {
         const response = await apiClient.get('/api/jabatan');
-        data.value = response.data;
+        data.value = response.data.data;
         console.log(data.value);
     } catch (error) {
         console.log('Error Fetch Data', error);
