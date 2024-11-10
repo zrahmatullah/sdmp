@@ -15,5 +15,6 @@ class JabatanModel extends Model
         'namaJabatan',
         'deskripsiJabatan',
         'golonganGaji',
+        'statusEnable',
     ];
 }

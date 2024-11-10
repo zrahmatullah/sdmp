@@ -28,19 +28,23 @@ class JabatanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //validasi data
-        $validatedData = $request->validate([
-            'namaJabatan'=> 'required|string|max:255',
-            'deskripsiJabatan'=> 'required|string|max:255',
-            'golonganGaji'=> 'nullable|string',
-        ]);
-        // dd($validatedData);
-        //menyimpan
-        $jabatan = JabatanModel::create($validatedData);
-        return response()->json($jabatan,201);
-    }
+public function store(Request $request)
+{
+    // Validasi data
+    $validatedData = $request->validate([
+        'namaJabatan' => 'required|string|max:255',
+        'deskripsiJabatan' => 'required|string|max:255',
+        'golonganGaji' => 'nullable|string',
+        'statusEnable' => 'required|boolean',
+    ]);
+
+    // Menyimpan data ke dalam database
+    $jabatan = JabatanModel::create($validatedData);
+
+    // Mengembalikan response JSON
+    return response()->json($jabatan, 201);
+}
+
 
     /**
      * Display the specified resource.

@@ -40,30 +40,30 @@
                 <Column field="namaJabatan" header="Nama Jabatan" sortable style="min-width:16rem"></Column>
                 <Column field="deskripsiJabatan" header="Deskripsi" sortable style="min-width:8rem"></Column>
                 <Column field="golonganGaji" header="Golongan Gaji" sortable style="min-width:10rem"></Column>
-                <Column field="inventoryStatus" header="Status Aktif" sortable style="min-width:12rem"></Column>
+                <Column field="statusAktif" header="Status Aktif" sortable style="min-width:12rem"></Column>
             </DataTable>
         </div>
 
 
-        <!-- EDIT DATA -->
-        <Dialog v-model:visible="productDialog" :style="{ width: '450px' }" header="Product Details" :modal="true"
+        <!-- create data -->
+        <Dialog v-model:visible="productDialog" :style="{ width: '450px' }" header="Tambah Jabatan" :modal="true"
             class="p-fluid">
             <img v-if="product.image" :src="`https://primefaces.org/cdn/primevue/images/product/${product.image}`"
                 :alt="product.image" class="block m-auto pb-3" />
             <div class="field">
-                <label for="name">Name</label>
-                <InputText id="name" v-model.trim="product.name" required="true" autofocus
-                    :invalid="submitted && !product.name" />
-                <small class="p-error" v-if="submitted && !product.name">Name is required.</small>
+                <label for="name">Nama Jabatan</label>
+                <InputText id="name" v-model.trim="data.namaJabatan" required="true" autofocus
+                    :invalid="submitted && !data.namaJabatan" />
+                <small class="p-error" v-if="submitted && !data.namaJabatan">Name is required.</small>
             </div>
             <div class="field">
-                <label for="description">Description</label>
-                <Textarea id="description" v-model="product.description" required="true" rows="3" cols="20" />
+                <label for="description">Deskripsi Jabatan</label>
+                <Textarea id="description" v-model="data.deskripsiJabatan" required="true" rows="3" cols="20" />
             </div>
 
             <div class="field">
-                <label for="inventoryStatus" class="mb-3">Inventory Status</label>
-                <Dropdown id="inventoryStatus" v-model="product.inventoryStatus" :options="statuses" optionLabel="label"
+                <label for="golonganGaji" class="mb-3">Golongan Gaji</label>
+                <Dropdown id="golonganGaji" v-model="data.golonganGaji" :options="golonganGajiOptions" optionLabel="label"
                     placeholder="Select a Status">
                     <template #value="slotProps">
                         <div v-if="slotProps.value && slotProps.value.value">
@@ -77,43 +77,15 @@
                         </span>
                     </template>
                 </Dropdown>
+
             </div>
 
-            <div class="field">
-                <label class="mb-3">Category</label>
-                <div class="formgrid grid">
-                    <div class="field-radiobutton col-6">
-                        <RadioButton id="category1" name="category" value="Accessories" v-model="product.category" />
-                        <label for="category1">Accessories</label>
-                    </div>
-                    <div class="field-radiobutton col-6">
-                        <RadioButton id="category2" name="category" value="Clothing" v-model="product.category" />
-                        <label for="category2">Clothing</label>
-                    </div>
-                    <div class="field-radiobutton col-6">
-                        <RadioButton id="category3" name="category" value="Electronics" v-model="product.category" />
-                        <label for="category3">Electronics</label>
-                    </div>
-                    <div class="field-radiobutton col-6">
-                        <RadioButton id="category4" name="category" value="Fitness" v-model="product.category" />
-                        <label for="category4">Fitness</label>
-                    </div>
-                </div>
-            </div>
 
-            <div class="formgrid grid">
-                <div class="field col">
-                    <label for="price">Price</label>
-                    <InputNumber id="price" v-model="product.price" mode="currency" currency="USD" locale="en-US" />
-                </div>
-                <div class="field col">
-                    <label for="quantity">Quantity</label>
-                    <InputNumber id="quantity" v-model="product.quantity" integeronly />
-                </div>
-            </div>
+
+
             <template #footer>
                 <Button label="Cancel" icon="pi pi-times" text @click="hideDialog" />
-                <Button label="Save" icon="pi pi-check" text @click="saveProduct" />
+                <Button label="Save" icon="pi pi-check" text @click="create" />
             </template>
         </Dialog>
 
@@ -151,19 +123,65 @@ import apiClient from '../../services/apiService';
 onMounted(() => {
     ProductService.getProducts().then((data) => (products.value = data));
     fetchData();
+    fetchGolonganGaji();
 });
 
 const data = ref([]);
+const golonganGajiOptions = ref([]);
 const fetchData = async () => {
     try {
         const response = await apiClient.get('/api/jabatan');
         data.value = response.data.data;
-        console.log(data.value);
+        // console.log(data.value);
     } catch (error) {
         console.log('Error Fetch Data', error);
     }
 };
 
+const fetchGolonganGaji = async () => {
+    try {
+        const response = await apiClient.get('/api/jabatan');
+        golonganGajiOptions.value = response.data.data.map(item => ({
+            label: `Golongan Gaji ${item.golonganGaji}`,  // Ambil golongan gaji dan beri label
+            value: item.golonganGaji,  // Nilai yang akan dikirim
+        }));
+
+        // console.log('ssss', this.golonganGajiOptions);
+    } catch (error) {
+        console.error('Terjadi kesalahan saat mengambil data jabatan:', error);
+        // alert('Gagal mengambil data jabatan.');
+    }
+};
+
+const create = async () => {
+    productDialog.value = false;
+    try {
+        const payload = {
+            "namaJabatan": data.value.namaJabatan,
+            "deskripsiJabatan": data.value.deskripsiJabatan,
+            "golonganGaji": data.value.golonganGaji ? data.value.golonganGaji.value : null,  // Menyimpan hanya nilai golonganGaji yang benar
+            "statusEnable": data.value.statusEnable || true,
+        };
+        console.log('Payload yang akan dikirim:', payload);  // Cek payload di konsol
+        // Mengirimkan data ke API
+        const response = await apiClient.post('/api/jabatan', payload);
+
+        if (response.status === 201) {
+            data.value = response.data;
+            fetchData();
+            console.log('jabatan berhasil disimpan:', response.data);
+        } else {
+            console.log('gagal menyimpan:', response.data);
+        }
+        // Opsional: Menampilkan pesan sukses atau melakukan navigasi setelah berhasil
+    } catch (error) {
+        // Menangani error jika terjadi
+        console.error('Terjadi kesalahan:', error);
+        alert('Terjadi kesalahan saat menyimpan jabatan.');
+
+        // Opsional: Menampilkan pesan kesalahan kepada pengguna
+    }
+};
 const toast = useToast();
 const dt = ref();
 const products = ref();
@@ -176,17 +194,7 @@ const filters = ref({
     'global': { value: null, matchMode: FilterMatchMode.CONTAINS },
 });
 const submitted = ref(false);
-const statuses = ref([
-    { label: 'INSTOCK', value: 'instock' },
-    { label: 'LOWSTOCK', value: 'lowstock' },
-    { label: 'OUTOFSTOCK', value: 'outofstock' }
-]);
 
-const formatCurrency = (value) => {
-    if (value)
-        return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
-    return;
-};
 const openNew = () => {
     product.value = {};
     submitted.value = false;
@@ -195,28 +203,6 @@ const openNew = () => {
 const hideDialog = () => {
     productDialog.value = false;
     submitted.value = false;
-};
-const saveProduct = () => {
-    submitted.value = true;
-
-    if (product?.value.name?.trim()) {
-        if (product.value.id) {
-            product.value.inventoryStatus = product.value.inventoryStatus.value ? product.value.inventoryStatus.value : product.value.inventoryStatus;
-            products.value[findIndexById(product.value.id)] = product.value;
-            toast.add({ severity: 'success', summary: 'Successful', detail: 'Product Updated', life: 3000 });
-        }
-        else {
-            product.value.id = createId();
-            product.value.code = createId();
-            product.value.image = 'product-placeholder.svg';
-            product.value.inventoryStatus = product.value.inventoryStatus ? product.value.inventoryStatus.value : 'INSTOCK';
-            products.value.push(product.value);
-            toast.add({ severity: 'success', summary: 'Successful', detail: 'Product Created', life: 3000 });
-        }
-
-        productDialog.value = false;
-        product.value = {};
-    }
 };
 const editProduct = (prod) => {
     product.value = { ...prod };
