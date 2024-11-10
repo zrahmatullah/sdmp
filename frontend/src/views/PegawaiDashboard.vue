@@ -63,8 +63,7 @@
                 </Column>
                 <Column :exportable="false" style="min-width:8rem">
                     <template #body="slotProps">
-                        <Button icon="pi pi-pencil" outlined rounded class="mr-2"
-                            @click="editProduct(slotProps.data)" />
+                        <Button icon="pi pi-pencil" outlined rounded class="mr-2" @click="editProduct(slotProps.data)" />
                         <Button icon="pi pi-trash" outlined rounded severity="danger"
                             @click="confirmDeleteProduct(slotProps.data)" />
                     </template>
