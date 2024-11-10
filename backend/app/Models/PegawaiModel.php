@@ -9,6 +9,5 @@ class PegawaiModel extends Model
 
     protected $table = 'pegawai_M';
     //
-
     protected $guarded = ['id'];
 }

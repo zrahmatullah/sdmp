@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PegawaiModel;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class PegawaiController extends Controller
 {
@@ -26,34 +27,39 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {    
-        // dari table pegawai_m ada yang di edit, di not null nya, semua nya di matikan kecuali id dan statusenable
-        if ($request->has('id')) {
-            $pegawai = PegawaiModel::findOrFail($request->id);
+        $tglLahir = Carbon::parse($request->TglLahirPGW)->format('d-m-Y');
+        $tglGabung = Carbon::parse($request->TglGabungPGW)->format('d-m-Y');
+
+        if (isset($request->pegawai_id)) {
+            $pegawai = PegawaiModel::findOrFail($request->pegawai_id);
             $message = 'Data pegawai berhasil diperbarui';
         } else {
             $pegawai = new PegawaiModel();
+            $message = 'Data pegawai berhasil disimpan';
+        }
+    
+        if ($request->fotoPGW) {
             $foto = $request->file('foto');
             $namaFile = time() . '_' . $foto->getClientOriginalName();
             $path = $foto->storeAs('uploads/foto', $namaFile, 'public');
             $pegawai->foto = 'storage/' . $path;
-            $message = 'Data pegawai berhasil disimpan';
         }
-        $pegawai->namaPegawai   = $request->namaPegawai ?? 'null';
-        $pegawai->email         = $request->email ?? 'null';
-        $pegawai->noTelepon     = $request->noTelepon ?? null;
-        $pegawai->alamat        = $request->alamat ?? 'null';
-        $pegawai->tglLahir      = $request->tglLahir ?? null ;
-        $pegawai->tglGabung     = $request->tglGabung ?? null ;
-        $pegawai->jabatan_id    = $request->jabatan_id ?? null;
-        $pegawai->statusenable   = 'true';
-        $pegawai->pegawai_id    = 12334;
-        $pegawai->departemen_id = $request->departemen_id ?? 'null';
+    
+        $pegawai->namaPegawai   = $request->namaPegawai;
+        $pegawai->email         = $request->emailPGW;
+        $pegawai->noTelepon     = $request->noTeleponPGW;
+        $pegawai->alamat        = $request->alamatPGW;
+        $pegawai->tglLahir      = $tglLahir;
+        $pegawai->tglGabung     = $tglGabung;
+        $pegawai->jabatan_id    = $request->jabatanPGW;
+        $pegawai->statusenable  = true;
+        $pegawai->departemen_id = $request->departemenPGW;
+    
         $pegawai->save();
-
     
         return response()->json([
             'message' => $message,
-            'data' => $pegawai
+            'data'    => $pegawai,
         ], $request->has('id') ? 200 : 201);
     }
 

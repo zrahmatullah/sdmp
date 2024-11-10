@@ -36,25 +36,25 @@
             </div>
             <div class="field col">
                 <label for="email">Email</label>
-                <InputText id="email" v-model.trim="data.email" required="true" :invalid="submitted && !data.email" />
+                <InputText id="email" v-model="data.email" required="true" :invalid="submitted && !data.email" />
                 <small class="p-error" v-if="submitted && !data.email">Email diperlukan.</small>
             </div>
             <div class="field col">
                 <label for="noHp">No Handphone</label>
-                <InputText id="noHp" v-model.trim="data.noHp" required="true" :invalid="submitted && !data.noHp" />
+                <InputText id="noHp" v-model="data.noHp" required="true" :invalid="submitted && !data.noHp" />
                 <small class="p-error" v-if="submitted && !data.noHp">No Handphone diperlukan.</small>
             </div>
         </div>
         <div class="formgrid grid">
             <div class="field col">
                 <label for="tglLahir">Tanggal Lahir</label>
-                <Calendar v-model="data.tglLahir" showIcon placeholder="Pilih Tanggal Lahir" :invalid="submitted && !data.tglLahir" />
-                <small class="p-error" v-if="submitted && !data.tglLahir">Tanggal Lahir diperlukan.</small>
+                <Calendar v-model="tglLahir" showIcon placeholder="Pilih Tanggal Lahir" :invalid="submitted && !tglLahir" dateFormat="dd/mm/yy" showTime="false"  />
+                <small class="p-error" v-if="submitted && !tglLahir">Tanggal Lahir diperlukan.</small>
             </div>
             <div class="field col">
                 <label for="tglGabung">Tanggal Gabung</label>
-                <Calendar v-model="data.tglGabung" showIcon placeholder="Pilih Tanggal Gabung" :invalid="submitted && !data.tglGabung" />
-                <small class="p-error" v-if="submitted && !data.tglGabung">Tanggal Gabung diperlukan.</small>
+                <Calendar v-model="tglGabung" showIcon placeholder="Pilih Tanggal Gabung" :invalid="submitted && !tglGabung" dateFormat="dd/mm/yy" />
+                <small class="p-error" v-if="submitted && !tglGabung">Tanggal Gabung diperlukan.</small>
             </div>
         </div>
         <div class="field">
@@ -125,6 +125,8 @@ import { useToast } from "primevue/usetoast";
 
 const data = ref([]);
 const listdata = ref([]);
+const tglLahir = ref(null);
+const tglGabung = ref(null);
 const jabatanData = ref([]);
 const departemenData = ref([]);
 const submitted = ref(false);
@@ -133,11 +135,6 @@ const productDialog = ref(false);
 const deleteProductsDialog = ref(false);
 const deleteProductDialog = ref(false);
 const dt = ref();
-const toast = useToast();
-const onUpload = (event) => {
-    toast.add({ severity: 'info', summary: 'Success', detail: 'File Uploaded', life: 3000 });
-};
-
 
 const fetchData = async () => {
     try {
@@ -164,33 +161,31 @@ const jabatanDanDepartemenDataPegawai = async () => {
     }
 };
 
+const onFileSelect = (event) => {
+  data.value.foto = event.files.name[0]; // Ambil file pertama yang dipilih
+  console.log('data.value.foto',data.value.foto)
+};
+
 const savePegawai = async () => {
-    submitted.value = true;
-    if (!data.namaPegawai || !data.email || !data.noHp || !data.alamat || !data.tglLahir || !data.tglGabung || !data.jabatan || !data.dapartemen) {
-        console.error("Harap lengkapi semua field yang diperlukan.");
-        return;
+    const json = {
+        "namaPegawai" : data.value.namaPegawai,
+        "emailPGW" : data.value.email,
+        "noTeleponPGW" : data.value.noHp,
+        "TglLahirPGW" : tglLahir.value,
+        "TglGabungPGW" : tglGabung.value,
+        "alamatPGW" : data.value.alamat,
+        "jabatanPGW" : data.value.jabatan.value,
+        "departemenPGW" : data.value.departemen,
+        "foto" : data.value.foto,
     }
-
-    // Membuat objek FormData untuk menampung data pegawai dan file
-    let formData = new FormData();
-    formData.append("id", data.id);
-    formData.append("namaPegawai", data.namaPegawai);
-    formData.append("emailPGW", data.email);
-    formData.append("noTeleponPGW", data.noHp);
-    formData.append("alamatPGW", data.alamat);
-    // formData.append("fotoPGW", data.foto); // file gambar
-    formData.append("TglLahirPGW", data.tglLahir);
-    formData.append("TglGabungPGW", data.tglGabung);
-    formData.append("jabatanPGW", data.jabatan);
-    formData.append("departemenPGW", data.dapartemen);
-
+    console.log('data formData',json)
     try {
-        const response = await apiClient.post('/api/pegawai', formData, {
-            headers: { 'Content-Type': 'multipart/form-data' }
+        const response = await apiClient.post('/api/pegawai', json, {
         });
-        console.log('Data berhasil dibuat:', response.data);
+        productDialog.value = false;
     } catch (error) {
-        console.error('Gagal membuat data:', error);
+        console.error("Gagal membuat data:", error);
+        toast.add({ severity: 'error', summary: 'Error', detail: 'Gagal menyimpan data' });
     }
 
     productDialog.value = false;
