@@ -18,7 +18,7 @@
                 </template>
             </Toolbar>
 
-            <DataTable ref="dt" :value="products" v-model:selection="selectedProducts" dataKey="id" :paginator="true"
+            <DataTable ref="dt" :value="data" v-model:selection="selectedProducts" dataKey="id" :paginator="true"
                 :rows="10" :filters="filters"
                 paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                 :rowsPerPageOptions="[5, 10, 25]"
@@ -37,38 +37,10 @@
 
                 <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
                 <Column field="code" header="Code" sortable style="min-width:12rem"></Column>
-                <Column field="name" header="Nama" sortable style="min-width:16rem"></Column>
-                <Column header="Image">
-                    <template #body="slotProps">
-                        <img :src="`https://primefaces.org/cdn/primevue/images/product/${slotProps.data.image}`"
-                            :alt="slotProps.data.image" class="border-round" style="width: 64px" />
-                    </template>
-                </Column>
-                <Column field="price" header="Price" sortable style="min-width:8rem">
-                    <template #body="slotProps">
-                        {{ formatCurrency(slotProps.data.price) }}
-                    </template>
-                </Column>
-                <Column field="category" header="Category" sortable style="min-width:10rem"></Column>
-                <Column field="rating" header="Reviews" sortable style="min-width:12rem">
-                    <template #body="slotProps">
-                        <Rating :modelValue="slotProps.data.rating" :readonly="true" :cancel="false" />
-                    </template>
-                </Column>
-                <Column field="inventoryStatus" header="Status" sortable style="min-width:12rem">
-                    <template #body="slotProps">
-                        <Tag :value="slotProps.data.inventoryStatus"
-                            :severity="getStatusLabel(slotProps.data.inventoryStatus)" />
-                    </template>
-                </Column>
-                <Column :exportable="false" style="min-width:8rem">
-                    <template #body="slotProps">
-                        <Button icon="pi pi-pencil" outlined rounded class="mr-2"
-                            @click="editProduct(slotProps.data)" />
-                        <Button icon="pi pi-trash" outlined rounded severity="danger"
-                            @click="confirmDeleteProduct(slotProps.data)" />
-                    </template>
-                </Column>
+                <Column field="namaJabatan" header="Nama Jabatan" sortable style="min-width:16rem"></Column>
+                <Column field="deskripsiJabatan" header="Deskripsi" sortable style="min-width:8rem"></Column>
+                <Column field="golonganGaji" header="Golongan Gaji" sortable style="min-width:10rem"></Column>
+                <Column field="inventoryStatus" header="Status Aktif" sortable style="min-width:12rem"></Column>
             </DataTable>
         </div>
 
@@ -173,11 +145,24 @@
 import { ref, onMounted } from 'vue';
 import { FilterMatchMode } from 'primevue/api';
 import { useToast } from 'primevue/usetoast';
-import { ProductService } from '../services/ProductService';
+import { ProductService } from '../../services/ProductService';
+import apiClient from '../../services/apiService';
 
 onMounted(() => {
     ProductService.getProducts().then((data) => (products.value = data));
+    fetchData();
 });
+
+const data = ref([]);
+const fetchData = async () => {
+    try {
+        const response = await apiClient.get('/api/jabatan');
+        data.value = response.data;
+        console.log(data.value);
+    } catch (error) {
+        console.log('Error Fetch Data', error);
+    }
+};
 
 const toast = useToast();
 const dt = ref();

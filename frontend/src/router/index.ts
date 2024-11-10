@@ -1,6 +1,6 @@
 //import vue router
 import { createRouter, createWebHistory } from 'vue-router'
-
+import masterRoutes from '../views/master/master-index'
 //define a routes
 const routes = [
     {
@@ -19,7 +19,8 @@ const routes = [
         component: () => import( /* webpackChunkName: "home" */ '../views/test.vue')
     },
 
-]
+    ...masterRoutes,
+];
 
 //create router
 const router = createRouter({
