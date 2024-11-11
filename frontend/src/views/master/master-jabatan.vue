@@ -157,7 +157,7 @@ const data = ref([]);
 const fetchData = async () => {
     try {
         const response = await apiClient.get('/api/jabatan');
-        data.value = response.data;
+        data.value = response.data.data;
         console.log(data.value);
     } catch (error) {
         console.log('Error Fetch Data', error);

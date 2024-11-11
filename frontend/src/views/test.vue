@@ -14,7 +14,8 @@
     </Toolbar>
     <div>
         <h1>Data Pegawai</h1>
-        <DataTable :value="listdata" paginator rows="10" :rowsPerPageOptions="[5, 10, 25]" dataKey="id">
+        <DataTable :value="listdata" paginator rows="10" :rowsPerPageOptions="[5, 10, 25]" :filters="filters" paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown" dataKey="id" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products">
+            <Column selectionMode="multiple" style="width: 3rem" :exportable="false"></Column>
             <Column field="namaPegawai" header="Nama Pegawai"></Column>
             <Column field="email" header="Email"></Column>
             <Column field="noTelepon" header="No Telepon"></Column>
@@ -48,7 +49,7 @@
         <div class="formgrid grid">
             <div class="field col">
                 <label for="tglLahir">Tanggal Lahir</label>
-                <Calendar v-model="tglLahir" showIcon placeholder="Pilih Tanggal Lahir" :invalid="submitted && !tglLahir" dateFormat="dd/mm/yy" showTime="false"  />
+                <Calendar v-model="tglLahir" showIcon placeholder="Pilih Tanggal Lahir" :invalid="submitted && !tglLahir" dateFormat="dd/mm/yy"  />
                 <small class="p-error" v-if="submitted && !tglLahir">Tanggal Lahir diperlukan.</small>
             </div>
             <div class="field col">
@@ -80,7 +81,18 @@
         <div class="formgrid grid">
             <div class="field col">
                 <label for="foto">Upload Foto</label>
-                <FileUpload @select="onFileSelect" accept="image/*" chooseLabel="Pilih Gambar"  :auto="false" :showUploadButton="false" :showCancelButton="false">
+                <!-- <FileUpload @select="onFileSelect" accept="image/*" chooseLabel="Pilih Gambar"  :auto="false" :showUploadButton="false" :showCancelButton="false"> -->
+                    <Toast />
+                    <FileUpload
+                        ref="fileUpload"
+                        name="foto"
+                        accept="image/*"
+                        :custom-upload="true"
+                        :auto="false"
+                        @select="onFileSelect"
+                        :showUploadButton="false"
+                        :showCancelButton="false"
+                    >
                     <template #empty>
                         <p>Belum ada gambar yang diinput.</p>
                     </template>
@@ -162,35 +174,56 @@ const jabatanDanDepartemenDataPegawai = async () => {
 };
 
 const onFileSelect = (event) => {
-  data.value.foto = event.files.name[0]; // Ambil file pertama yang dipilih
-  console.log('data.value.foto',data.value.foto)
-};
-
-const savePegawai = async () => {
-    const json = {
-        "namaPegawai" : data.value.namaPegawai,
-        "emailPGW" : data.value.email,
-        "noTeleponPGW" : data.value.noHp,
-        "TglLahirPGW" : tglLahir.value,
-        "TglGabungPGW" : tglGabung.value,
-        "alamatPGW" : data.value.alamat,
-        "jabatanPGW" : data.value.jabatan.value,
-        "departemenPGW" : data.value.departemen,
-        "foto" : data.value.foto,
+    const file = event.files[0]; // Ambil file pertama
+    if (file) {
+        data.value.foto = file; // Menyimpan file foto
+        console.log('File yang diupload:', data.value.foto);
     }
-    console.log('data formData',json)
+};
+const savePegawai = async () => {
+    const formData = new FormData();
+    
+    // Menambahkan file foto ke formData
+    formData.append('foto', data.value.foto);
+
+    const formattedTglLahir = new Date(tglLahir.value).toLocaleDateString('id-ID', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+
+    const formattedTglGabung = new Date(tglGabung.value).toLocaleDateString('id-ID', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric'
+    });
+    
+    // Menambahkan data lainnya ke formData
+    formData.append('namaPegawai', data.value.namaPegawai);
+    formData.append('emailPGW', data.value.email);
+    formData.append('noTeleponPGW', data.value.noHp);
+    formData.append('TglLahirPGW', formattedTglLahir);
+    formData.append('TglGabungPGW', formattedTglGabung);
+    formData.append('alamatPGW', data.value.alamat);
+    formData.append('jabatanPGW', data.value.jabatan.value);
+    formData.append('departemenPGW', data.value.departemen);
+    
+    console.log('data formData', formData);
+
     try {
-        const response = await apiClient.post('/api/pegawai', json, {
+        // Mengirimkan data ke server dengan formData
+        const response = await apiClient.post('/api/pegawai', formData, {
+            headers: { 'Content-Type': 'multipart/form-data' },
         });
+        toast.add({ severity: 'success', summary: 'Berhasil', detail: 'Data berhasil disimpan' });
         productDialog.value = false;
+        console.log(response);
     } catch (error) {
         console.error("Gagal membuat data:", error);
         toast.add({ severity: 'error', summary: 'Error', detail: 'Gagal menyimpan data' });
     }
-
-    productDialog.value = false;
-    product.value = {};
 };
+
 
 const hideDialog = () => {
     productDialog.value = false;
@@ -203,6 +236,12 @@ const openNew = () => {
 };
 const confirmDeleteSelected = () => {
     deleteProductsDialog.value = true;
+};
+const deleteSelectedProducts = () => {
+    products.value = products.value.filter(val => !selectedProducts.value.includes(val));
+    deleteProductsDialog.value = false;
+    selectedProducts.value = null;
+    toast.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
 };
 const exportCSV = () => {
     dt.value.exportCSV();

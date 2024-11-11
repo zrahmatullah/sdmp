@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\PegawaiModel;
 use Illuminate\Http\Request;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class PegawaiController extends Controller
 {
@@ -38,10 +39,10 @@ class PegawaiController extends Controller
             $message = 'Data pegawai berhasil disimpan';
         }
     
-        if ($request->fotoPGW) {
-            $foto = $request->file('foto');
-            $namaFile = time() . '_' . $foto->getClientOriginalName();
-            $path = $foto->storeAs('uploads/foto', $namaFile, 'public');
+        // dd($request->hasFile('foto'));
+        if ($request->hasFile('foto')) {
+            $fileName = uniqid() . '_' . $request->file('foto')->getClientOriginalName();
+            $path = $request->file('foto')->storeAs('uploads/foto', $fileName, 'public');
             $pegawai->foto = 'storage/' . $path;
         }
     
