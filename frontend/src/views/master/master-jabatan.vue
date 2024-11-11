@@ -40,7 +40,11 @@
                 <Column field="namaJabatan" header="Nama Jabatan" sortable style="min-width:16rem"></Column>
                 <Column field="deskripsiJabatan" header="Deskripsi" sortable style="min-width:8rem"></Column>
                 <Column field="golonganGaji" header="Golongan Gaji" sortable style="min-width:10rem"></Column>
-                <Column field="statusAktif" header="Status Aktif" sortable style="min-width:12rem"></Column>
+                <Column field="statusEnable" header="Status Aktif" sortable style="min-width:12rem">
+                    <template #body="slotProps">
+                        <span>{{ slotProps.data.statusEnable ? 'Aktif' : 'Tidak Aktif' }}</span>
+                    </template>
+                </Column>
             </DataTable>
         </div>
 
