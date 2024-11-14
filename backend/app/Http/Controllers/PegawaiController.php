@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use App\Models\PegawaiModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class PegawaiController extends Controller
 {
@@ -16,7 +17,17 @@ class PegawaiController extends Controller
      */
     public function index()
     {
-        $pegawai = PegawaiModel::all();
+        $pegawai = DB::table('pegawai_M as pg')
+            ->select('pg.*', 'dpm.namaDepartemen', 'jb.namaJabatan')
+            ->join('jabatan_M as jb', 'jb.id', '=', 'pg.jabatan_id')
+            ->join('departemen_M as dpm', 'dpm.id', '=', 'pg.departemen_id')
+            ->where('pg.statusenable', true)
+            ->get()
+            ->map(function ($item) {
+                $item->foto = $item->foto ? asset( $item->foto) : null;
+                return $item;
+            });
+
         return response()->json($pegawai);
     }
 
@@ -31,14 +42,25 @@ class PegawaiController extends Controller
         $tglLahir = Carbon::parse($request->TglLahirPGW)->format('d-m-Y');
         $tglGabung = Carbon::parse($request->TglGabungPGW)->format('d-m-Y');
 
-        if (isset($request->pegawai_id)) {
-            $pegawai = PegawaiModel::findOrFail($request->pegawai_id);
-            $message = 'Data pegawai berhasil diperbarui';
-        } else {
-            $pegawai = new PegawaiModel();
-            $message = 'Data pegawai berhasil disimpan';
+        // dd($request->delete['pegawai_id']);
+        if(isset($request->delete['pegawai_id'])){
+            $deletedPegawaiCount = PegawaiModel::whereIn('id', $request->delete['pegawai_id'])->delete();
+        
+            return response()->json([
+                'message' => "$deletedPegawaiCount pegawai berhasil dihapus",
+                'data'    => [],
+            ], 200);
+        }else{
+            if (isset($request->id_pegawai)) {
+                $pegawai = PegawaiModel::findOrFail($request->id_pegawai);
+                $message = 'Data pegawai berhasil diperbarui';
+            } else {
+                $pegawai = new PegawaiModel();
+                $message = 'Data pegawai berhasil disimpan';
+            }
         }
-    
+        
+        // dd('hello');
         // dd($request->hasFile('foto'));
         if ($request->hasFile('foto')) {
             $fileName = uniqid() . '_' . $request->file('foto')->getClientOriginalName();
