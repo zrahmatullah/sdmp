@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\JabatanModel;
 
+/**
+ * @OA\Info(title="Documentation API", version="1.0")
+ */
 class JabatanController extends Controller
 {
     /**
@@ -17,7 +20,7 @@ class JabatanController extends Controller
         $jabatan = JabatanModel::all();
         $data = [
             "data" => $jabatan,
-            "message" => 'piy@'
+            "message" => 'success'
         ];
         return response()->json($data);
     }
