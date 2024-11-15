@@ -18,8 +18,8 @@
                 </template>
             </Toolbar>
 
-            <DataTable ref="dt" :value="data" v-model:selection="selectedProducts" dataKey="id" :paginator="true" :rows="10"
-                :filters="filters"
+            <DataTable ref="dt" :value="data" v-model:selection="selectedProducts" dataKey="id" :paginator="true"
+                :rows="10" :filters="filters"
                 paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
                 :rowsPerPageOptions="[5, 10, 25]"
                 currentPageReportTemplate="Showing {first} to {last} of {totalRecords} products">
@@ -67,8 +67,8 @@
 
             <div class="field">
                 <label for="golonganGaji" class="mb-3">Golongan Gaji</label>
-                <Dropdown id="golonganGaji" v-model="data.golonganGaji" :options="golonganGajiOptions" optionLabel="label"
-                    placeholder="Select a Status">
+                <Dropdown id="golonganGaji" v-model="data.golonganGaji" :options="golonganGajiOptions"
+                    optionLabel="label" placeholder="Select a Status">
                     <template #value="slotProps">
                         <div v-if="slotProps.value && slotProps.value.value">
                             <Tag :value="slotProps.value.value" :severity="getStatusLabel(slotProps.value.label)" />
