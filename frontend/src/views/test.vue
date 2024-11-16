@@ -232,7 +232,8 @@
       <div class="formgrid grid">
         <div class="field col">
           <label for="foto">Upload Foto</label>
-          <div class="imgOld">
+          <div v-if="namafile == null"></div>
+          <div v-else class="imgOld">
             <img :src="fotoPreview" alt="Preview Foto" class="preview-foto" 
           v-if="fotoPreview" />
             <div >
