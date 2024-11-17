@@ -132,6 +132,19 @@ class JabatanController extends Controller
     public function update(Request $request, $id)
     {
         // Implement update logic
+        $jabatan = JabatanModel::find($request['id']);
+         if (!$jabatan) {
+            return response()->json(['message' => 'Jabatan tidak ditemukan'], 404);
+        }
+        //validasi
+        $validatedData = $request->validate([
+             'namaJabatan' => 'required|string|max:255',
+            'deskripsiJabatan' => 'required|string|max:255',
+            'golonganGaji' => 'nullable|string',
+            'statusEnable' => 'required|boolean',
+        ]);
+        $jabatan->update($validatedData);
+        return response()->json($jabatan);
     }
 
     /**
