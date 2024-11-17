@@ -25,9 +25,9 @@
                         </Button>
                         <div v-if="isDropdownVisible" class="dropdown-menu">
                         <ul>
-                            <li @click="handleAction('Action 1')">Profile</li>
-                            <li @click="handleAction('Action 2')">Setting</li>
-                            <li @click="handleAction('Action 3')">Login</li>
+                            <li @click="handleAction('profile')">Profile</li>
+                            <li @click="handleAction('setting')">Setting</li>
+                            <li @click="handleAction('auth')">Login</li>
                         </ul>
                         </div>
                     </div>
@@ -45,18 +45,24 @@ import spongebobImg from '../assets/sepongebob.png';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
+
 const role = 'director';
 const isDropdownVisible = ref(false);
 
 function navigateToPage() {
-     router.push({ name: 'auth' }); 
+     
 }
 function toggleDropdown() {
   isDropdownVisible.value = !isDropdownVisible.value;
 }
 
-function handleAction(action) {
-  console.log(action); 
+function handleAction(action) {  
+  if (action === 'auth' || action === 'profile' || action === 'settings') {
+    router.push({ name: action }); 
+  } else {
+    console.error(`Route "${action}" tidak ditemukan!`);
+  }
+
   isDropdownVisible.value = false;
 }
 
