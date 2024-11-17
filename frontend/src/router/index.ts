@@ -6,7 +6,7 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: () => import( /* webpackChunkName: "home" */ '../views/home.vue')
+        component: () => import( /* webpackChunkName: "home" */ '../views/Dashboard.vue')
     },
     {
         path: '/pegawai-dashboard',
