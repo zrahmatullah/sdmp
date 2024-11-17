@@ -19,7 +19,18 @@
             <template #end>
                 <div class="flex align-items-center gap-2">
                     <InputText placeholder="Search" type="text" class="w-8rem sm:w-auto" />
-                    <!-- <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" shape="circle" /> -->
+                    <div class="dropdown-container">
+                        <Button class="custom-split-button" @click="toggleDropdown">
+                        <img :src="getImage()" alt="Role Icon" class="button-image" />
+                        </Button>
+                        <div v-if="isDropdownVisible" class="dropdown-menu">
+                        <ul>
+                            <li @click="handleAction('Action 1')">Profile</li>
+                            <li @click="handleAction('Action 2')">Setting</li>
+                            <li @click="handleAction('Action 3')">Login</li>
+                        </ul>
+                        </div>
+                    </div>
                 </div>
             </template>
         </Menubar>
@@ -28,6 +39,54 @@
 
 <script setup>
 import { ref } from "vue";
+import { FilterMatchMode } from "primevue/api";
+import { useToast } from "primevue/usetoast";
+import spongebobImg from '../assets/sepongebob.png';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const role = 'director';
+const isDropdownVisible = ref(false);
+
+function navigateToPage() {
+     router.push({ name: 'auth' }); 
+}
+function toggleDropdown() {
+  isDropdownVisible.value = !isDropdownVisible.value;
+}
+
+function handleAction(action) {
+  console.log(action); 
+  isDropdownVisible.value = false;
+}
+
+
+
+const jabatanDanDepartemenDataPegawai = async () => {
+  try {
+    const responseJabatan = await apiClient.get("/api/jabatan");
+    role.value = responseJabatan.data.data.map((item) => ({
+      label: item.namaJabatan,
+      value: item.id,
+    }));
+  } catch (error) {
+    console.error("Error loading data:", error);
+  }
+};
+
+
+function getImage() {
+  if (role === 'director') {
+    return spongebobImg;
+    }
+//   } else if (role === 'hrd') {
+//     return patrikImg;
+//   } else if (role === 'programmer') {
+//     return squidwardImg;
+//   } else {
+//     return ''; // Jalur default jika tidak ada yang cocok
+//   }
+}
 
 const items = ref([
     {
@@ -85,4 +144,62 @@ const items = ref([
     }
 ]);
 </script>
+<style scoped>
+.custom-split-button {
+  padding: 0px;
+  border-radius: 50%;
+  margin: 10px;
+  background-color: transparent;
+  color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.button-image {
+  width: 50px; /* Atur ukuran gambar sesuai kebutuhan */
+  height: auto;
+  border-radius: 50%;
+}
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.custom-split-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  width: 150px;
+  left: -80px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li {
+  padding: 8px 16px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f0f0f0;
+}
+</style>
 
