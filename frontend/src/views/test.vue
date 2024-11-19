@@ -277,17 +277,21 @@
       <div class="form-container">
         <!-- Kolom kiri untuk upload foto -->
         <div class="form-section">
-          <h3>Upload Foto Baru</h3>
+          <h3>Upload Foto</h3>
           <FileUpload
-            mode="basic"
-            name="demo[]"
-            auto
-            chooseLabel="Pilih Foto"
             accept="image/*"
+            chooseLabel="Upload Foto"
+            :auto="false"
+            :showUploadButton="false"
+            :showCancelButton="false"
+            mode="basic"
+            @select="onFileSelect"
             customUpload
-            @upload="uploadHandler"
+            auto
+            severity="secondary"
+            class="p-button-outlined"
           />
-          <p v-if="!selectedFile">Belum ada gambar yang dipilih.</p>
+          <!-- <p v-if="!selectedFile">Belum ada gambar yang dipilih.</p> -->
         </div>
 
         <!-- Kolom kanan untuk menampilkan foto lama -->
@@ -610,6 +614,15 @@ onMounted(() => {
 </script>
 
 <style scoped>
+.p-dialog-enter-active,
+.p-dialog-leave-active {
+  transition: opacity 0.2s;
+}
+.p-dialog-enter,
+.p-dialog-leave-to {
+  opacity: 0;
+}
+
 .preview-foto {
   width: 50px;
   height: 55px;
