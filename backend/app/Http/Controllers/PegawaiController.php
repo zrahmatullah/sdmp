@@ -39,8 +39,8 @@ class PegawaiController extends Controller
      */
     public function store(Request $request)
     {    
-        $tglLahir = Carbon::parse($request->TglLahirPGW)->format('d-m-Y');
-        $tglGabung = Carbon::parse($request->TglGabungPGW)->format('d-m-Y');
+        $tglLahir = Carbon::createFromFormat('d/m/Y', $request->TglLahirPGW)->format('d-m-Y');
+        $tglGabung = Carbon::createFromFormat('d/m/Y', $request->TglGabungPGW)->format('d-m-Y');
 
         // dd($request->delete['pegawai_id']);
         if(isset($request->delete['pegawai_id'])){

@@ -6,7 +6,7 @@ const routes = [
     {
         path: '/',
         name: 'home',
-        component: () => import( /* webpackChunkName: "home" */ '../views/home.vue')
+        component: () => import( /* webpackChunkName: "home" */ '../views/Dashboard.vue')
     },
     {
         path: '/pegawai-dashboard',
@@ -17,6 +17,11 @@ const routes = [
         path: '/test',
         name: 'test',
         component: () => import( /* webpackChunkName: "home" */ '../views/test.vue')
+    },
+    {
+        path: '/auth',
+        name: 'auth',
+        component: () => import( /* webpackChunkName: "home" */ '../views/Login/auth.vue')
     },
 
     ...masterRoutes,

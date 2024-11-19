@@ -1,0 +1,212 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentation API",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "",
+            "description": "API Server"
+        }
+    ],
+    "paths": {
+        "/api/jabatan": {
+            "get": {
+                "tags": [
+                    "Jabatan"
+                ],
+                "summary": "Get all jabatan",
+                "operationId": "getAllJabatan",
+                "responses": {
+                    "200": {
+                        "description": "A list of jabatan",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Jabatan"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Jabatan"
+                ],
+                "summary": "Create a new jabatan",
+                "operationId": "createJabatan",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Jabatan"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Jabatan created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Jabatan"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/jabatan/{id}": {
+            "get": {
+                "tags": [
+                    "Jabatan"
+                ],
+                "summary": "Get jabatan by ID",
+                "operationId": "getJabatanById",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Jabatan ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Jabatan details",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Jabatan"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Jabatan not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Jabatan"
+                ],
+                "summary": "Update jabatan",
+                "operationId": "updateJabatan",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Jabatan ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Jabatan"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Jabatan updated successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Jabatan"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Jabatan not found"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Jabatan"
+                ],
+                "summary": "Delete jabatan",
+                "operationId": "deleteJabatan",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Jabatan ID",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Jabatan deleted successfully"
+                    },
+                    "404": {
+                        "description": "Jabatan not found"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Jabatan": {
+                "required": [
+                    "namaJabatan",
+                    "deskripsiJabatan",
+                    "statusEnable"
+                ],
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "example": 1
+                    },
+                    "namaJabatan": {
+                        "type": "string",
+                        "example": "Manager"
+                    },
+                    "deskripsiJabatan": {
+                        "type": "string",
+                        "example": "Manages a team of developers"
+                    },
+                    "golonganGaji": {
+                        "type": "string",
+                        "example": "A"
+                    },
+                    "statusEnable": {
+                        "type": "boolean",
+                        "example": true
+                    }
+                },
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Jabatan",
+            "description": "Jabatan"
+        }
+    ]
+}

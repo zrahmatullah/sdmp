@@ -1,0 +1,1138 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "292e73fc-0bc3-4b91-b42d-55104419f5e5",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "Display Swagger API page.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/swagg",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/swagg"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Display Swagger API page. Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/swagg",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/swagg"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "null"
+                        }
+                    ]
+                },
+                {
+                    "name": "Dump api-docs content endpoint. Supports dumping a json, or yaml file.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "docs\/:jsonFile",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/docs\/:jsonFile",
+                            "variable": [
+                                {
+                                    "id": "jsonFile",
+                                    "key": "jsonFile",
+                                    "value": "unde",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Dump api-docs content endpoint. Supports dumping a json, or yaml file. Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "docs\/:jsonFile",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/docs\/:jsonFile",
+                                    "variable": [
+                                        {
+                                            "id": "jsonFile",
+                                            "key": "jsonFile",
+                                            "value": "unde",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"Unable to locate documentation file at: \\\"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/storage\\\/api-docs\\\/unde\\\"\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\NotFoundHttpException\",\n    \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Application.php\",\n    \"line\": 1129,\n    \"trace\": [\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/helpers.php\",\n            \"line\": 44,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/darkaonline\\\/l5-swagger\\\/src\\\/Http\\\/Controllers\\\/SwaggerController.php\",\n            \"line\": 80,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Controller.php\",\n            \"line\": 54,\n            \"function\": \"docs\",\n            \"class\": \"L5Swagger\\\\Http\\\\Controllers\\\\SwaggerController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/ControllerDispatcher.php\",\n            \"line\": 45,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Route.php\",\n            \"line\": 262,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 721,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/darkaonline\\\/l5-swagger\\\/src\\\/Http\\\/Middleware\\\/Config.php\",\n            \"line\": 44,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"L5Swagger\\\\Http\\\\Middleware\\\\Config\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 723,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 698,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 662,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 651,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 167,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/fruitcake\\\/laravel-cors\\\/src\\\/HandleCors.php\",\n            \"line\": 38,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/fideloper\\\/proxy\\\/src\\\/TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fideloper\\\\Proxy\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 142,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 111,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 324,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 305,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 76,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 51,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 41,\n            \"function\": \"makeResponseCallIfEnabledAndNoSuccessResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 172,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 127,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 119,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 73,\n            \"function\": \"processRoutes\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/Container.php\",\n            \"line\": 653,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Command.php\",\n            \"line\": 136,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Command\\\/Command.php\",\n            \"line\": 298,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Command.php\",\n            \"line\": 121,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 1040,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 301,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 171,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Application.php\",\n            \"line\": 94,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Console\\\/Kernel.php\",\n            \"line\": 129,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/artisan\",\n            \"line\": 37,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "docs\/asset\/{asset}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "docs\/asset\/:asset",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/docs\/asset\/:asset",
+                            "variable": [
+                                {
+                                    "id": "asset",
+                                    "key": "asset",
+                                    "value": "molestias",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "docs\/asset\/{asset} Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "docs\/asset\/:asset",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/docs\/asset\/:asset",
+                                    "variable": [
+                                        {
+                                            "id": "asset",
+                                            "key": "asset",
+                                            "value": "molestias",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"(molestias) - this L5 Swagger asset is not allowed\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\NotFoundHttpException\",\n    \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Application.php\",\n    \"line\": 1129,\n    \"trace\": [\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/helpers.php\",\n            \"line\": 44,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/darkaonline\\\/l5-swagger\\\/src\\\/Http\\\/Controllers\\\/SwaggerAssetController.php\",\n            \"line\": 34,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Controller.php\",\n            \"line\": 54,\n            \"function\": \"index\",\n            \"class\": \"L5Swagger\\\\Http\\\\Controllers\\\\SwaggerAssetController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/ControllerDispatcher.php\",\n            \"line\": 45,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Route.php\",\n            \"line\": 262,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 721,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/darkaonline\\\/l5-swagger\\\/src\\\/Http\\\/Middleware\\\/Config.php\",\n            \"line\": 44,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"L5Swagger\\\\Http\\\\Middleware\\\\Config\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 723,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 698,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 662,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 651,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 167,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/fruitcake\\\/laravel-cors\\\/src\\\/HandleCors.php\",\n            \"line\": 38,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/fideloper\\\/proxy\\\/src\\\/TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fideloper\\\\Proxy\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 142,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 111,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 324,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 305,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 76,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 51,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 41,\n            \"function\": \"makeResponseCallIfEnabledAndNoSuccessResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 172,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 127,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 119,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 73,\n            \"function\": \"processRoutes\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/Container.php\",\n            \"line\": 653,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Command.php\",\n            \"line\": 136,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Command\\\/Command.php\",\n            \"line\": 298,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Command.php\",\n            \"line\": 121,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 1040,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 301,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 171,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Application.php\",\n            \"line\": 94,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Console\\\/Kernel.php\",\n            \"line\": 129,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/artisan\",\n            \"line\": 37,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Display Oauth2 callback pages.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/oauth2-callback",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/oauth2-callback"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Display Oauth2 callback pages. Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/oauth2-callback",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/oauth2-callback"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "null"
+                        }
+                    ]
+                },
+                {
+                    "name": "Return an empty response simply to trigger the storage of the CSRF cookie in the browser.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "sanctum\/csrf-cookie",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/sanctum\/csrf-cookie"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "api\/user Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/user",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/user"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"Unauthenticated.\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pegawai",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/pegawai"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Display a listing of the resource. Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/pegawai",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/pegawai"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "[\n    {\n        \"id\": 38,\n        \"namaPegawai\": \"Piyo Aswandi\",\n        \"email\": \"piyoaswandi@gmail.com\",\n        \"noTelepon\": \"081234567890\",\n        \"alamat\": \"sebagai derektur\",\n        \"foto\": \"http:\\\/\\\/localhost\\\/storage\\\/uploads\\\/foto\\\/67323bdbbb81f_1714975299899.jpeg\",\n        \"tglLahir\": \"2024-12-11\",\n        \"tglGabung\": \"2024-12-11\",\n        \"jabatan_id\": 1,\n        \"departemen_id\": 2,\n        \"created_at\": \"2024-11-11 17:16:11\",\n        \"updated_at\": \"2024-11-11 17:16:11\",\n        \"statusenable\": true,\n        \"namaDepartemen\": \"DEREKTUR\",\n        \"namaJabatan\": \"Direktur\"\n    },\n    {\n        \"id\": 34,\n        \"namaPegawai\": \"nina\",\n        \"email\": \"nisa@gmail.com\",\n        \"noTelepon\": \"086548374893345\",\n        \"alamat\": \"test\",\n        \"foto\": \"http:\\\/\\\/localhost\\\/storage\\\/uploads\\\/foto\\\/6731c97118b89_img_crome.png\",\n        \"tglLahir\": \"2024-11-11\",\n        \"tglGabung\": \"2024-11-11\",\n        \"jabatan_id\": 1,\n        \"departemen_id\": 2,\n        \"created_at\": \"2024-11-11 09:08:01\",\n        \"updated_at\": \"2024-11-14 07:26:00\",\n        \"statusenable\": true,\n        \"namaDepartemen\": \"DEREKTUR\",\n        \"namaJabatan\": \"Direktur\"\n    }\n]"
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pegawai",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/pegawai"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pegawai\/:pegawai",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/pegawai\/:pegawai",
+                            "variable": [
+                                {
+                                    "id": "pegawai",
+                                    "key": "pegawai",
+                                    "value": "neque",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Display the specified resource. Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/pegawai\/:pegawai",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/pegawai\/:pegawai",
+                                    "variable": [
+                                        {
+                                            "id": "pegawai",
+                                            "key": "pegawai",
+                                            "value": "neque",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \\\"neque\\\"\\nCONTEXT:  unnamed portal parameter $1 = '...' (SQL: select * from \\\"pegawai_M\\\" where \\\"pegawai_M\\\".\\\"id\\\" = neque limit 1)\",\n    \"exception\": \"Illuminate\\\\Database\\\\QueryException\",\n    \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Connection.php\",\n    \"line\": 712,\n    \"trace\": [\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Connection.php\",\n            \"line\": 672,\n            \"function\": \"runQueryCallback\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Connection.php\",\n            \"line\": 376,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Query\\\/Builder.php\",\n            \"line\": 2414,\n            \"function\": \"select\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Query\\\/Builder.php\",\n            \"line\": 2402,\n            \"function\": \"runSelect\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Query\\\/Builder.php\",\n            \"line\": 2936,\n            \"function\": \"Illuminate\\\\Database\\\\Query\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Query\\\/Builder.php\",\n            \"line\": 2403,\n            \"function\": \"onceWithColumns\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Builder.php\",\n            \"line\": 625,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Builder.php\",\n            \"line\": 609,\n            \"function\": \"getModels\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Concerns\\\/BuildsQueries.php\",\n            \"line\": 294,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Builder.php\",\n            \"line\": 400,\n            \"function\": \"first\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Support\\\/Traits\\\/ForwardsCalls.php\",\n            \"line\": 23,\n            \"function\": \"find\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Model.php\",\n            \"line\": 2132,\n            \"function\": \"forwardCallTo\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Model\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Model.php\",\n            \"line\": 2144,\n            \"function\": \"__call\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Model\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/app\\\/Http\\\/Controllers\\\/PegawaiController.php\",\n            \"line\": 98,\n            \"function\": \"__callStatic\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Model\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Controller.php\",\n            \"line\": 54,\n            \"function\": \"show\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\PegawaiController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/ControllerDispatcher.php\",\n            \"line\": 45,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Route.php\",\n            \"line\": 262,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 721,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Middleware\\\/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Middleware\\\/ThrottleRequests.php\",\n            \"line\": 127,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Middleware\\\/ThrottleRequests.php\",\n            \"line\": 63,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 723,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 698,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 662,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 651,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 167,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/fruitcake\\\/laravel-cors\\\/src\\\/HandleCors.php\",\n            \"line\": 52,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/fideloper\\\/proxy\\\/src\\\/TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fideloper\\\\Proxy\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 142,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 111,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 324,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 305,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 76,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 51,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 41,\n            \"function\": \"makeResponseCallIfEnabledAndNoSuccessResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 172,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 127,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 119,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 73,\n            \"function\": \"processRoutes\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/Container.php\",\n            \"line\": 653,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Command.php\",\n            \"line\": 136,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Command\\\/Command.php\",\n            \"line\": 298,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Command.php\",\n            \"line\": 121,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 1040,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 301,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 171,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Application.php\",\n            \"line\": 94,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Console\\\/Kernel.php\",\n            \"line\": 129,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/artisan\",\n            \"line\": 37,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pegawai\/:pegawai",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/pegawai\/:pegawai",
+                            "variable": [
+                                {
+                                    "id": "pegawai",
+                                    "key": "pegawai",
+                                    "value": "tenetur",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/pegawai\/:pegawai",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/pegawai\/:pegawai",
+                            "variable": [
+                                {
+                                    "id": "pegawai",
+                                    "key": "pegawai",
+                                    "value": "distinctio",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/jabatan",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jabatan",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/jabatan"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "api\/jabatan Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/jabatan",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/jabatan"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 2,\n            \"namaJabatan\": \"Hrd\",\n            \"deskripsiJabatan\": \"Hrd\",\n            \"golonganGaji\": \"2\",\n            \"created_at\": \"2024-11-05T14:40:08.000000Z\",\n            \"updated_at\": \"2024-11-05T14:40:08.000000Z\",\n            \"statusEnable\": null\n        },\n        {\n            \"id\": 4,\n            \"namaJabatan\": \"Hrd\",\n            \"deskripsiJabatan\": \"Hrd\",\n            \"golonganGaji\": \"2\",\n            \"created_at\": \"2024-11-10T07:05:07.000000Z\",\n            \"updated_at\": \"2024-11-10T07:05:07.000000Z\",\n            \"statusEnable\": null\n        },\n        {\n            \"id\": 1,\n            \"namaJabatan\": \"Direktur\",\n            \"deskripsiJabatan\": \"Direktur\",\n            \"golonganGaji\": \"1\",\n            \"created_at\": \"2024-11-06T00:01:14.000000Z\",\n            \"updated_at\": \"2024-11-06T00:01:35.000000Z\",\n            \"statusEnable\": null\n        },\n        {\n            \"id\": 5,\n            \"namaJabatan\": \"Hrd\",\n            \"deskripsiJabatan\": \"Hrd\",\n            \"golonganGaji\": \"2\",\n            \"created_at\": \"2024-11-10T07:53:28.000000Z\",\n            \"updated_at\": \"2024-11-10T07:53:28.000000Z\",\n            \"statusEnable\": true\n        },\n        {\n            \"id\": 18,\n            \"namaJabatan\": \"Project Manager\",\n            \"deskripsiJabatan\": \"PM\",\n            \"golonganGaji\": \"2\",\n            \"created_at\": \"2024-11-10T09:20:38.000000Z\",\n            \"updated_at\": \"2024-11-10T09:20:38.000000Z\",\n            \"statusEnable\": true\n        },\n        {\n            \"id\": 19,\n            \"namaJabatan\": \"as\",\n            \"deskripsiJabatan\": \"as\",\n            \"golonganGaji\": \"2\",\n            \"created_at\": \"2024-11-10T09:27:03.000000Z\",\n            \"updated_at\": \"2024-11-10T09:27:03.000000Z\",\n            \"statusEnable\": true\n        },\n        {\n            \"id\": 20,\n            \"namaJabatan\": \"asas\",\n            \"deskripsiJabatan\": \"assa\",\n            \"golonganGaji\": \"2\",\n            \"created_at\": \"2024-11-10T09:27:26.000000Z\",\n            \"updated_at\": \"2024-11-10T09:27:26.000000Z\",\n            \"statusEnable\": true\n        },\n        {\n            \"id\": 21,\n            \"namaJabatan\": \"asda\",\n            \"deskripsiJabatan\": \"asda\",\n            \"golonganGaji\": \"2\",\n            \"created_at\": \"2024-11-10T09:28:42.000000Z\",\n            \"updated_at\": \"2024-11-10T09:28:42.000000Z\",\n            \"statusEnable\": true\n        },\n        {\n            \"id\": 22,\n            \"namaJabatan\": \"Programer\",\n            \"deskripsiJabatan\": \"simrs\",\n            \"golonganGaji\": \"2\",\n            \"created_at\": \"2024-11-10T09:39:50.000000Z\",\n            \"updated_at\": \"2024-11-10T09:39:50.000000Z\",\n            \"statusEnable\": true\n        }\n    ],\n    \"message\": \"success\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/jabatan",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jabatan",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/jabatan"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/jabatan\/{jabatan}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jabatan\/:jabatan",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/jabatan\/:jabatan",
+                            "variable": [
+                                {
+                                    "id": "jabatan",
+                                    "key": "jabatan",
+                                    "value": "velit",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "api\/jabatan\/{jabatan} Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/jabatan\/:jabatan",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/jabatan\/:jabatan",
+                                    "variable": [
+                                        {
+                                            "id": "jabatan",
+                                            "key": "jabatan",
+                                            "value": "velit",
+                                            "description": ""
+                                        }
+                                    ]
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"message\": \"SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for type bigint: \\\"velit\\\"\\nCONTEXT:  unnamed portal parameter $1 = '...' (SQL: select * from \\\"jabatan_M\\\" where \\\"jabatan_M\\\".\\\"id\\\" = velit limit 1)\",\n    \"exception\": \"Illuminate\\\\Database\\\\QueryException\",\n    \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Connection.php\",\n    \"line\": 712,\n    \"trace\": [\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Connection.php\",\n            \"line\": 672,\n            \"function\": \"runQueryCallback\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Connection.php\",\n            \"line\": 376,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Query\\\/Builder.php\",\n            \"line\": 2414,\n            \"function\": \"select\",\n            \"class\": \"Illuminate\\\\Database\\\\Connection\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Query\\\/Builder.php\",\n            \"line\": 2402,\n            \"function\": \"runSelect\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Query\\\/Builder.php\",\n            \"line\": 2936,\n            \"function\": \"Illuminate\\\\Database\\\\Query\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Query\\\/Builder.php\",\n            \"line\": 2403,\n            \"function\": \"onceWithColumns\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Builder.php\",\n            \"line\": 625,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Query\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Builder.php\",\n            \"line\": 609,\n            \"function\": \"getModels\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Concerns\\\/BuildsQueries.php\",\n            \"line\": 294,\n            \"function\": \"get\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Builder.php\",\n            \"line\": 400,\n            \"function\": \"first\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Support\\\/Traits\\\/ForwardsCalls.php\",\n            \"line\": 23,\n            \"function\": \"find\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Builder\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Model.php\",\n            \"line\": 2132,\n            \"function\": \"forwardCallTo\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Model\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Database\\\/Eloquent\\\/Model.php\",\n            \"line\": 2144,\n            \"function\": \"__call\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Model\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/app\\\/Http\\\/Controllers\\\/JabatanController.php\",\n            \"line\": 97,\n            \"function\": \"__callStatic\",\n            \"class\": \"Illuminate\\\\Database\\\\Eloquent\\\\Model\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Controller.php\",\n            \"line\": 54,\n            \"function\": \"show\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\JabatanController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/ControllerDispatcher.php\",\n            \"line\": 45,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Route.php\",\n            \"line\": 262,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Route.php\",\n            \"line\": 205,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 721,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Middleware\\\/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Middleware\\\/ThrottleRequests.php\",\n            \"line\": 127,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Middleware\\\/ThrottleRequests.php\",\n            \"line\": 63,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\ThrottleRequests\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 723,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 698,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 662,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Routing\\\/Router.php\",\n            \"line\": 651,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 167,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 128,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/TrimStrings.php\",\n            \"line\": 40,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Middleware\\\/PreventRequestsDuringMaintenance.php\",\n            \"line\": 86,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/fruitcake\\\/laravel-cors\\\/src\\\/HandleCors.php\",\n            \"line\": 52,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fruitcake\\\\Cors\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/fideloper\\\/proxy\\\/src\\\/TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 167,\n            \"function\": \"handle\",\n            \"class\": \"Fideloper\\\\Proxy\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Pipeline\\\/Pipeline.php\",\n            \"line\": 103,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 142,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Http\\\/Kernel.php\",\n            \"line\": 111,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 324,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 305,\n            \"function\": \"callLaravelOrLumenRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 76,\n            \"function\": \"makeApiCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 51,\n            \"function\": \"makeResponseCall\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Strategies\\\/Responses\\\/ResponseCalls.php\",\n            \"line\": 41,\n            \"function\": \"makeResponseCallIfEnabledAndNoSuccessResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 236,\n            \"function\": \"__invoke\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Strategies\\\\Responses\\\\ResponseCalls\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 172,\n            \"function\": \"iterateThroughStrategies\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Extracting\\\/Generator.php\",\n            \"line\": 127,\n            \"function\": \"fetchResponses\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 119,\n            \"function\": \"processRoute\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Extracting\\\\Generator\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/knuckleswtf\\\/scribe\\\/src\\\/Commands\\\/GenerateDocumentation.php\",\n            \"line\": 73,\n            \"function\": \"processRoutes\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 36,\n            \"function\": \"handle\",\n            \"class\": \"Knuckles\\\\Scribe\\\\Commands\\\\GenerateDocumentation\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/Util.php\",\n            \"line\": 40,\n            \"function\": \"Illuminate\\\\Container\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 93,\n            \"function\": \"unwrapIfClosure\",\n            \"class\": \"Illuminate\\\\Container\\\\Util\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/BoundMethod.php\",\n            \"line\": 37,\n            \"function\": \"callBoundMethod\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Container\\\/Container.php\",\n            \"line\": 653,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\BoundMethod\",\n            \"type\": \"::\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Command.php\",\n            \"line\": 136,\n            \"function\": \"call\",\n            \"class\": \"Illuminate\\\\Container\\\\Container\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Command\\\/Command.php\",\n            \"line\": 298,\n            \"function\": \"execute\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Command.php\",\n            \"line\": 121,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Command\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 1040,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Command\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 301,\n            \"function\": \"doRunCommand\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/symfony\\\/console\\\/Application.php\",\n            \"line\": 171,\n            \"function\": \"doRun\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Console\\\/Application.php\",\n            \"line\": 94,\n            \"function\": \"run\",\n            \"class\": \"Symfony\\\\Component\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/vendor\\\/laravel\\\/framework\\\/src\\\/Illuminate\\\/Foundation\\\/Console\\\/Kernel.php\",\n            \"line\": 129,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Console\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"\\\/media\\\/jasamedika\\\/DATA LIN\\\/backup lin\\\/cod\\\/projek\\\/sdm-projek\\\/backend\\\/artisan\",\n            \"line\": 37,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Console\\\\Kernel\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "api\/jabatan\/{jabatan}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jabatan\/:jabatan",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/jabatan\/:jabatan",
+                            "variable": [
+                                {
+                                    "id": "jabatan",
+                                    "key": "jabatan",
+                                    "value": "quas",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "api\/jabatan\/{jabatan}",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/jabatan\/:jabatan",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/jabatan\/:jabatan",
+                            "variable": [
+                                {
+                                    "id": "jabatan",
+                                    "key": "jabatan",
+                                    "value": "dolores",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display a listing of the resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departemen",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departemen"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "Display a listing of the resource. Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "api\/departemen",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/api\/departemen"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"namaDepartemen\": \"HR\",\n            \"deskripsi\": \"hr\",\n            \"jabatan_id\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 2,\n            \"namaDepartemen\": \"DEREKTUR\",\n            \"deskripsi\": \"DIRUT\",\n            \"jabatan_id\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 3,\n            \"namaDepartemen\": \"ISIMRS\",\n            \"deskripsi\": \"ISIM\",\n            \"jabatan_id\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        },\n        {\n            \"id\": 4,\n            \"namaDepartemen\": \"RAWAT JALAN\",\n            \"deskripsi\": \"RJ\",\n            \"jabatan_id\": 1,\n            \"created_at\": null,\n            \"updated_at\": null\n        }\n    ],\n    \"message\": \"piy@\"\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a newly created resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departemen",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departemen"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Display the specified resource.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departemen\/:departeman",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departemen\/:departeman",
+                            "variable": [
+                                {
+                                    "id": "departeman",
+                                    "key": "departeman",
+                                    "value": "voluptatibus",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update the specified resource in storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departemen\/:departeman",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departemen\/:departeman",
+                            "variable": [
+                                {
+                                    "id": "departeman",
+                                    "key": "departeman",
+                                    "value": "fugiat",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Remove the specified resource from storage.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/departemen\/:departeman",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/departemen\/:departeman",
+                            "variable": [
+                                {
+                                    "id": "departeman",
+                                    "key": "departeman",
+                                    "value": "repellat",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "\/",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "\/",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/\/"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "name": "\/ Response #1",
+                            "originalRequest": {
+                                "url": {
+                                    "protocol": "http",
+                                    "host": "{{baseUrl}}",
+                                    "path": "\/",
+                                    "query": [],
+                                    "raw": "http:\/\/{{baseUrl}}\/\/"
+                                },
+                                "method": "GET",
+                                "header": [
+                                    {
+                                        "key": "Content-Type",
+                                        "value": "application\/json"
+                                    },
+                                    {
+                                        "key": "Accept",
+                                        "value": "application\/json"
+                                    }
+                                ],
+                                "body": null,
+                                "description": "",
+                                "auth": {
+                                    "type": "noauth"
+                                }
+                            },
+                            "header": null,
+                            "cookie": [],
+                            "body": "null"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "noauth"
+    }
+}
