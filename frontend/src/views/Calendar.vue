@@ -109,11 +109,12 @@ const updateCalendar = () => {
     }
   }
 
-  if (week.length) weeks.value.push(week); // Push the remaining week
+  if (week.length) weeks.value.push(week);
 
-  currentMonthName.value = currentDate.toLocaleString("default", {
-    month: "long",
-  });
+  currentMonthName.value = new Date(
+    currentYear.value,
+    currentMonth.value
+  ).toLocaleString("default", { month: "long" });
 };
 
 const selectDay = (day) => {

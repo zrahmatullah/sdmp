@@ -14,6 +14,12 @@ const masterRoutes: Array<RouteRecordRaw> = [
     name: "master-pegawai",
     component: () => import("./master-pegawai.vue"),
   },
+
+  {
+    path: "/master-departemen",
+    name: "master-departemen",
+    component: () => import("./master-departemen.vue"),
+  },
 ];
 
 //create router

@@ -150,6 +150,16 @@
                             <span class="font-medium">Pegawai</span>
                           </a>
                         </li>
+                        <li>
+                          <a
+                            v-ripple
+                            href="/master-departemen"
+                            class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple"
+                          >
+                            <i class="pi pi-chart-line mr-2"></i>
+                            <span class="font-medium">Departemen</span>
+                          </a>
+                        </li>
                       </ul>
                     </li>
                     <li>
